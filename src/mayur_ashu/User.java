@@ -1,14 +1,13 @@
 package mayur_ashu;
 
-
 import java.util.*;
 
 public class User extends Member {
 	protected int karma;
 	public Date date;
 	public final long date_created;	
-	public static final long MONTHTimestamp=2628000000L;
-	public static final long YEARimestamp=315360000000000L;
+	public static final long MONTHTimestamp=2592000000L; //2592073436
+	public static final long YEARimestamp=31536000000L; //34214421043
 	//protected 
 	
 	public User() {
@@ -42,10 +41,12 @@ public class User extends Member {
 	}
 	
 	public void changeutype(){
-		long diff=date.getTime()-date_created;
-		if(diff>YEARimestamp){
+		Date n = new Date();
+		long diff=n.getTime()-date_created;
+		System.out.println(n.getTime()+"  " + date_created+ "    "+diff );
+		if(diff>MONTHTimestamp&&diff<YEARimestamp){
 			setUsertype("middle");
-		}else if(diff>MONTHTimestamp){
+		}else if(diff>YEARimestamp){
 			setUsertype("old");
 		}
 		else{

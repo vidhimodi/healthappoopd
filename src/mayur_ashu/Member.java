@@ -1,6 +1,5 @@
 package mayur_ashu;
 
-
 import java.util.*;
 
 public class Member {
@@ -37,6 +36,7 @@ public class Member {
 	public String viewProfile(){
 		if(!loggedin())
 			return "please log in";
+//		return super.toString();
 		return " username=" + username + ", primary_email="
 		+ primary_email + ", secondary_email=" + secondary_email
 		+ ", password=" + password + ", usertype=" + usertype

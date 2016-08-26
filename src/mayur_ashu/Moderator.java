@@ -1,6 +1,5 @@
 package mayur_ashu;
 
-
 import java.util.*;
 
 public class Moderator extends Member {
