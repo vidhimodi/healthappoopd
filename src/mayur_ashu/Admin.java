@@ -1,18 +1,7 @@
 package mayur_ashu;
-/**
- * 
- */
 
-
-import java.util.Scanner;
-
-/**
- * @author ashu mayur
- *
- */
 public class Admin extends Member {
-	long em_num;
-	private Scanner in;
+	String em_num;
 	public Admin() {
 	}
 
@@ -29,24 +18,25 @@ public class Admin extends Member {
 	 * @param status
 	 */
 	public Admin(String username, String password,String primary_email, String secondary_email,
-			String usertype, String firstname, String lastname, String address,
-			String aboutme, String[] url, String status,long num) {
+			int usertype, String firstname, String lastname, String aboutme, String[] url, int status,String streetname,
+			String streetnumber,String majormunicipality,String governingdistrict,String postalarea,String num) {
 		super(username,password ,primary_email, secondary_email, usertype, firstname,
-				lastname, address, aboutme, url, status);
+				lastname, aboutme, url, status,streetname,
+				streetnumber,majormunicipality,governingdistrict,postalarea);
 		this.em_num=num;
 		
 	}
 	/**
 	 * @return the em_num
 	 */
-	public long getEm_num() {
+	public String getEm_num() {
 		return em_num;
 	}
 
 	/**
 	 * @param em_num the em_num to set
 	 */
-	public void setEm_num(long em_num) {
+	public void setEm_num(String em_num) {
 		this.em_num = em_num;
 	}
 
@@ -62,10 +52,5 @@ public class Admin extends Member {
 		System.out.println(this.toString());
 		return this.toString();
 	}
-	public void register(String uname,String utype){
-		super.register(uname, utype);
-		in = new Scanner(System.in);
-		System.out.println("enter the emergencyu contact number");
-		setEm_num(in.nextLong());
-	}
+	
 }
